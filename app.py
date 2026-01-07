@@ -79,7 +79,7 @@ with st.sidebar:
         st.rerun()
 
 # --- 5. MAIN INTERFACE ---
-st.markdown('<p class="main-title">CHATBOT</p>', unsafe_allow_html=True)
+st.markdown('<p class="main-title">MIRAG_CHATBOT</p>', unsafe_allow_html=True)
 st.markdown('<p class="sub-text">Intelligent University Policy Navigator</p>', unsafe_allow_html=True)
 
 if not manual_text:
@@ -89,7 +89,7 @@ if not manual_text:
 # Initialize Chat History
 if "messages" not in st.session_state:
     st.session_state.messages = [
-        {"role": "assistant", "content": "Assalam o Alaikum! I am **CHATBOT**. I have analyzed your university's academic manual. How can I help you today?"}
+        {"role": "assistant", "content": "Assalam o Alaikum! I am **MIRAG_CHATBOT**. I have analyzed your university's academic manual. How can I help you today?"}
     ]
 
 # Display Chat History
@@ -112,7 +112,7 @@ if prompt := st.chat_input("Ask about attendance, GPA, or policies..."):
             stream = client.chat.completions.create(
                 model="llama-3.1-8b-instant",
                 messages=[
-                    {"role": "system", "content": f"You are CHATBOT, a professional academic advisor. Use ONLY this text to answer: {manual_text[:15000]}. Be formal, precise, and helpful."},
+                    {"role": "system", "content": f"You are MIRAG_CHATBOT, a professional academic advisor. Use ONLY this text to answer: {manual_text[:15000]}. Be formal, precise, and helpful."},
                     {"role": "user", "content": prompt}
                 ],
                 stream=True, 
